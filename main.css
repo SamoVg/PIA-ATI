@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.container{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    
+}
+
+p.highlight{
+    font-weight: bolder;
+    text-shadow: rgba(0, 0, 0, 5) 10px 10px 10px;
+    font-size: 1.5rem; 
+}
+.hero{
+    background-image: 
+    linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(130,130,130,.5) 62%, rgba(255,255,255,.1) 100%),
+    url('Assets/img/heroimg.jpg');
+    background-size: cover;
+    min-height: 500px;
+    height: 100vh;
+    color: #fff;
+
+}
+
+.nav{
+    --state-close: scale(0);
+    --state-hamburguer:scale(1);
+    --state-menu: translate(-100%);
+
+    padding: 40px 0;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+}
+
+
+
+
+.nav:target{
+    --state-menu: translate(0);
+    --state-close: scale(1);
+    --state-hamburguer:scale(0);
+}
+
+.nav__logo{
+    font-size: 2.5rem;
+    z-index: 1;
+    transition: all .3s;
+    position: fixed;
+}
+
+
+ .nav__logo:hover{
+    
+    transform: translateY(-5px);
+}
+
+.nav__hamburguer, 
+.nav__close{
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    transition: .4s transform;
+    filter: invert(100%);
+    z-index: 110;
+    position: fixed;
+    right: 5%;
+}
+
+.nav__hamburguer{
+    transform: var(--state-hamburguer);
+}
+
+.nav__close{
+    transform: var(--state-close);
+}
+
+.nav__icon{
+    width: 40px;
+}
+
+.nav__links{
+    background-color: rgba(0, 0, 0, 5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+  
+
+    display: grid;
+    align-content: center;
+    gap: 2em;
+    padding-left: 5%;
+
+    transform: var(--state-menu);
+    transition: .3s transform;
+
+    z-index: 100;
+}
+
+.nav__item{
+    list-style: none;
+}
+
+.nav__link{
+    color: #fff;
+   
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.nav__link::after{
+    
+        content: '';
+        display: block;
+        margin-top: 3px;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width .3s;
+    
+}
+.nav__link:hover::after{
+    width: 100%;
+}
+
+.hero__title{
+    position: absolute;
+    width: 300px;
+    top: 40%;
+    left: 10%;
+    font-size: 3rem;
+    transition: .3s;
+}
+
+.hero__title:hover{
+    top: 39%;
+}
+
+.Inicio{
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 10%;
+    gap: 10%;
+  background-color: rgba(65,96,108,1);
+    color: #fff;
+    font-size: 1.4rem;
+}   
+
+.inicio__copy{
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.history{
+    color: #fff;
+    height: 100vh;
+     background-image: linear-gradient(180deg, rgba(65,96,108,1) 0%, rgba(255,79,8,.11) 88%), 
+    url('Assets/img/Fire2.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 30% 0;
+}
+.history__item{
+    
+
+}
+@media (min-width:768px) {
+    .nav{
+        --state-hamburguer:scale(0);
+        --state-menu: translate(0);
+    }
+    
+    .nav:target{
+        --state-close: scale(0);
+        
+    }
+
+    .nav__links{
+        padding: 0;
+        background-color: unset;
+        
+        gap: 1.5em;
+        grid-auto-flow: column;
+        transform: unset;
+        width: fit-content;
+        left: auto;
+        bottom: initial;
+        margin: 50px;
+        
+        position: fixed;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+    }
+
+    .nav__logo{
+        bottom: 85%;
+    }
+    .nav__link{
+        font-size: 1rem;
+        letter-spacing: none;
+        border-bottom: 1px black;
+       
+    }
+    .nav__link:hover{
+        border-bottom: #000;
+        
+    }
+    .hero__title{
+        width: 400px;
+    }
+}
