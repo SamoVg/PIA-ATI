@@ -8,6 +8,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <link rel="stylesheet" href="main.css"/>
+  <script src="node_modules\chart.js\dist\chart.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIA ATI</title>
 </head>
@@ -20,19 +21,19 @@
 
             <ul class="nav__links">
                 <li class="nav__item">
-                        <a href="#hero" class="nav__link">Inicio</a>
+                        <a href="#hero" class="nav__link" >Inicio</a>
                 </li>
                  <li class="nav__item">
                         <a href="#inicio" class="nav__link">Energias</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Tipos</a>
+                    <a href="#tipos" class="nav__link">Tipos</a>
                 </li>
                 <li class="nav__item">
                     <a href="#" class="nav__link">Proceso</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#" class="nav__link">Datos</a>
+                    <a href="#datos" class="nav__link">Datos</a>
                 </li>
             </ul>
 
@@ -51,9 +52,11 @@
             Suministro de Energía en la Ingeniería
         </h1>
 
-        
+       
     </header>
+    
     <section class="Inicio"  id="inicio">
+        
         <div class="inicio__info">
              <h1 class="info__title">
             Energias Renovables<br>
@@ -73,8 +76,11 @@
     </section>
 
     <section class="history">
-        <div class="history__item history__fire">
-            <h1 class="History__title">
+        <h2 class="title hover">
+            Historia
+        </h2>
+        <div class="history__item ">
+            <h1 class="History__title fire">
                 Prehistoria
             </h1>
             <p class="history__copy paragraph">
@@ -82,6 +88,170 @@
 
             </p>
         </div>
+        <div class="history__item ">
+            <h1 class="History__title light">
+                En 1887
+            </h1>
+            <p class="history__copy paragraph">
+                Charles F. Brush construyó la primera turbina eólica
+
+            </p>
+        </div>
     </section>
+
+<section class="Combustibles" id="tipos">
+    <h1 class="title hover">
+        Tipos de Combustible
+    </h1>
+        <div class="grid">
+            <div class="grid__item hover">
+                <img src="Assets/img/Mar.jpg" alt="">
+                <div class="grid__container ">
+                    <h2 class="grid__title">
+                    Energía Mareomotriz
+                </h2>
+                <p class="grid__copy">
+                    Movimiento de las mareas y corrientes oceánicas.
+
+                </p>
+                </div>
+                
+            </div>
+
+            <div class="grid__item hover">
+                <img src="Assets/img/Eolica.jpg" alt="">
+                <div class="grid__container ">
+                    <h2 class="grid__title">
+                    Energía Eólica
+                </h2>
+                <p class="grid__copy">
+                    Fuerza mecánica del viento para poner en función turbinas generadoras.
+
+
+                </p>
+                </div>
+                
+            </div>
+
+            <div class="grid__item hover">
+                <img src="Assets/img/nuclear.jpg" alt="">
+                <div class="grid__container ">
+                    <h2 class="grid__title">
+                    Energía Nuclear
+                </h2>
+                <p class="grid__copy">
+                    Obtención de energía mediante reacciones atómicas controladas.
+
+
+                </p>
+                </div>
+                
+            </div>
+
+            <div class="grid__item hover">
+                <img src="Assets/img/solar.jpg" alt="">
+                <div class="grid__container ">
+                    <h2 class="grid__title">
+                        Energía Solar
+                </h2>
+                <p class="grid__copy">
+                    Utiliza y almacena la energía provocada por la radiación solar.
+
+
+                </p>
+            </div>
+            </div>
+                
+            <div class="grid__item hover">
+                    <img src="Assets/img/geotermica.jpg" alt="">
+                    <div class="grid__container ">
+                        <h2 class="grid__title ">
+                            Energía Geotérmica
+                    </h2>
+                    <p class="grid__copy">
+                        Usa el calor proveniente del subsuelo de la tierra.
+    
+    
+                    </p>
+                    </div>
+            </div>
+            
+            <div class="grid__item hover">
+                        <img src="Assets/img/hidroelectrica.jpg" alt="">
+                        <div class="grid__container ">
+                            <h2 class="grid__title">
+                                Energía Hidroeléctrica
+
+                        </h2>
+                        <p class="grid__copy">
+                            Se produce  a través de la energía gravitatoria de grandes masas de agua.
+
+        
+        
+                        </p>
+                        </div>
+
+            </div>
+          
+    </div>
+</section>
+
+    <section class="data" id="datos">
+        <div class="mychart">
+            <canvas id="chart"></canvas>
+        </div>
+    </section>
+
+    <section class="descargas">
+        <h1 class="title hover">
+            Links de descarga
+        </h1>
+        <div class="downloads">
+     <a class="download__link" href="Assets/Downloads/Ati presentación.pptx" download="">Powerpoint</a>
+    <a class="download__link" href="Assets/Downloads/Equipo 1_ATI_Informe Electrónico.docx" download="">Word</a>
+    <a class="download__link" href="Assets/Downloads/E1-M6_Modelo Matematico en Hoja de Calculo.xlsx" download="">Excel  </a>
+
+    </div> 
+
+    <video controls height="400px" width="600px"  src="Assets/videos/Biofuels.mp4"></video>
+    <iframe src="https://prezi.com/p/embed/YKTia1YWPjPC1hKfWSXY/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="315" width="560"></iframe>
+    </section>
+    
+
 </body>
+<script>
+    const ctx = document.getElementById('chart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['America', 'Asia', 'Europa'],
+            datasets: [{
+                label: 'Produccion de Biocombustibles del Año 2000-2015',
+                data: [4345.6, 370.8, 573.1],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.3)',
+                    'rgba(54, 162, 235, 0.3)',
+                    'rgba(255, 206, 86, 0.3)',
+               
+                   
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+   
+                   
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
 </html>
