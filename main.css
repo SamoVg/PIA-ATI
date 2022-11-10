@@ -4,7 +4,7 @@
 }
 html{
     scroll-behavior: smooth;
-    
+    scroll-margin-top: 15vh;
 }
 body{
     font-family: 'Roboto', sans-serif;
@@ -296,7 +296,7 @@ p.highlight{
 }
 
 .grid__item:nth-child(2n):hover{
-    border: 1px solid rgb(29, 111, 66);
+    border: 1px solid #feec85;
     box-shadow: 0 0 10px #feec85;
 }
 
@@ -352,11 +352,11 @@ p.highlight{
 }
 
 .download__link:nth-child(1):hover{
-    color: orange;
-    border-color: orange;
+    color: #FF8000;
+    border-color: #FF8000;
     border-radius: 5px;
     transform: translateY(-5px);
-    box-shadow: 10px 10px 1px orange   ;
+    box-shadow: 10px 10px 1px #FF8000   ;
 }
 .download__link:nth-child(2):hover{
     color: rgba(65, 165, 238);
@@ -376,9 +376,133 @@ p.highlight{
 }
 
 .mychart{
-    margin: 10%;
+    margin: 5%;
 }
+
+.video{
+
+    padding: 5%;
+    padding-bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.video video{
+    align-self: center;
+    width: 80%;
+}
+.prezi{
+ 
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+    padding-top: 3%;
+    gap: 2em;
+}
+.prezi iframe{
+width: 80%;
+align-self: center;
+aspect-ratio: 1.5;
+}
+.integrantes{
+    color: #fff;
+    width: 100vw;
+    padding: 0 5%;
+    display: flex;
+    background-color: #212121;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.table{
+    width: 100%;
+    margin: 5vh 0;
+    padding: 0 10px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    margin: 10px 0;
+    padding: 20px 0;
+   align-items: center;
+   justify-content: center;
+   transition: all 1s ease-in;
+}
+
+.Nombre{
+    text-align: center;
+
+}
+
+.row__title{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 10px;
+
+}
+.row__title>*{
+    width: 33.3%;
+    text-align: center;
+
+}
+.row>*{
+    width: 33.3%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.row::after{
+    content: '';
+   
+}
+
+.row:hover::after{
+    transform: translateX(50%);
+}
+
 @media (min-width:768px) {
+   
+    .table{
+        border: none;
+    }
+
+.row>*{
+    width: 33.3%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.row::after{
+    content: '';
+    height: 25px;
+    left: 35vw;
+    width: 110%;
+    background-color: #212121;
+    border-left: 1px solid #fff;
+    position: absolute;
+    transition: all 1s ease;
+}
+
+.row:hover::after{
+    transform: translateX(50%);
+}
+    .mychart{
+        margin: 5% 15% ;
+    }
     .nav{
         --state-hamburguer:scale(0);
         --state-menu: translate(0);
@@ -470,7 +594,7 @@ p.highlight{
         justify-content: center;
     }
 
-    .history .title{
+     .title{
         font-size: 3rem;
     }
 }
